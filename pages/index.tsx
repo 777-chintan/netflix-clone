@@ -5,6 +5,7 @@ import Head from "next/head";
 import Banner from "../components/Banner";
 import Row from "../components/Home/Row";
 import Header from "../components/Layout/Header";
+import useAuth from "../hooks/useAuth";
 
 // utils
 import { Movie } from "../typing";
@@ -31,7 +32,10 @@ const Home = ({
   romanceMovies,
   documentaries,
 }: Props) => {
-  // console.log("object", netflixOriginals[0]);
+  const { loading } = useAuth();
+
+  if (loading) return null;
+
   return (
     <div className="relative bg-gradient-to-b h-[140vh]">
       <Head>
