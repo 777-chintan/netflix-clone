@@ -5,10 +5,18 @@ import Head from "next/head";
 import Banner from "../components/Banner";
 import Row from "../components/Home/Row";
 import Header from "../components/Layout/Header";
+import TrailerModal from "../components/TrailerModal";
+
+// hooks
+import useAuth from "../hooks/useAuth";
 
 // utils
 import { Movie } from "../typing";
 import requests from "../utils/requests";
+
+// recoil
+import { useRecoilValue } from "recoil";
+import { modalState } from "../atoms/modalAtom";
 
 interface Props {
   netflixOriginals: Movie[];
@@ -31,7 +39,11 @@ const Home = ({
   romanceMovies,
   documentaries,
 }: Props) => {
-  // console.log("object", netflixOriginals[0]);
+  const { loading } = useAuth();
+  const showModal = useRecoilValue(modalState);
+
+  if (loading) return null;
+
   return (
     <div className="relative bg-gradient-to-b h-[140vh]">
       <Head>
@@ -52,6 +64,7 @@ const Home = ({
           <Row title="Documentaries" movies={documentaries} />
         </section>
       </main>
+      {showModal && <TrailerModal />}
     </div>
   );
 };
