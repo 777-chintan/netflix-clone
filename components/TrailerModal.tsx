@@ -81,6 +81,8 @@ function TrailerModal() {
             style={{ position: "absolute", top: 0, left: 0 }}
             playing={playing}
             muted={muted}
+            onPause={() => setPlaying(false)}
+            onPlay={() => setPlaying(true)}
           />
           <div className="absolute bottom-10 flex items-center justify-between px-10 w-full">
             <div className="flex space-x-2">
