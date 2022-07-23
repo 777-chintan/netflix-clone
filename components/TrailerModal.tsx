@@ -67,12 +67,14 @@ function TrailerModal() {
       className="fixed !top-8 left-0 right-0 mx-auto w-full max-w-5xl overflow-hidden overflow-y-scroll rounded-md scrollbar-hide"
     >
       <>
-        <button
-          onClick={handleClose}
-          className="trailerModalButton h-9 w-9 absolute right-5 top-5  bg-[#181818] !z-40 border-none hover:bg-[#181818]"
-        >
-          <XIcon className="h-6 w-6" />
-        </button>
+        <div className="relative">
+          <button
+            onClick={handleClose}
+            className="trailerModalButton h-9 w-9 absolute right-5 top-5  bg-[#181818] !z-40 border-none hover:bg-[#181818]"
+          >
+            <XIcon className="h-6 w-6" />
+          </button>
+        </div>
         <div className="relative pt-[56.25%]">
           <ReactPlayer
             url={`https://youtube.com/watch?v=${trailer}`}
