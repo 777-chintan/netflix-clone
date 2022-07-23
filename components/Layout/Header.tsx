@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 
 // icons
-import { BellIcon, SearchIcon } from "@heroicons/react/outline";
+import { BellIcon, LogoutIcon, SearchIcon } from "@heroicons/react/outline";
 import useAuth from "../../hooks/useAuth";
 
 function Header() {
@@ -39,23 +39,24 @@ function Header() {
         />
         <ul className="hidden md:flex space-x-4">
           <li className="headerLink">Home</li>
-          <li className="headerLink">TV Shows</li>
+          {/* <li className="headerLink">TV Shows</li>
           <li className="headerLink">Movies</li>
           <li className="headerLink">New & Popular</li>
-          <li className="headerLink">My List</li>
+          <li className="headerLink">My List</li> */}
         </ul>
       </div>
       <div className="flex items-center space-x-4 text-sm font-light">
-        <SearchIcon className="h-6 w-6 cursor-pointer hidden sm:inline" />
-        <p className="hidden lg:inline">Kids</p>
-        <BellIcon className="h-6 w-6 cursor-pointer" />
+        {/* <SearchIcon className="h-6 w-6 cursor-pointer hidden sm:inline" /> */}
+        {/* <p className="hidden lg:inline">Kids</p> */}
+        {/* <BellIcon className="h-6 w-6 cursor-pointer" /> */}
         {/* <Link href="/account"> */}
-        <img
+        <LogoutIcon className="h-6 w-6 cursor-pointer" onClick={logout} />
+        {/* <img
           onClick={logout}
           src="https://rb.gy/g1pwyx"
           alt=""
           className="cursor-pointer rounded"
-        />
+        /> */}
         {/* </Link> */}
       </div>
     </header>
